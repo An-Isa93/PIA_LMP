@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'admin_biblio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Library',
@@ -82,6 +82,16 @@ DATABASES = {
         'PASSWORD':'root',
         'HOST':'libraryP',
         'PORT':'3306'
+    }
+}"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv('DB_NAME', 'Library'),
+        'USER': os.getenv('DB_USER', 'root'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'root'),
+        'HOST': os.getenv('DB_HOST', 'db'),  # Usando el nombre del servicio de MySQL
+        'PORT': '3306',
     }
 }
 
