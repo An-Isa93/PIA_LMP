@@ -59,6 +59,14 @@ pipeline {
                 }
             }
         }
+        stage('Restart Container Final') {
+            steps {
+                script {
+                    // Reiniciar el contenedor por nombre
+                    sh 'docker restart django-container'
+                }
+            }
+        }
         /*stage('Make Migrations') {
             steps {
                 script {
