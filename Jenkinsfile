@@ -63,7 +63,7 @@ pipeline {
             steps {
                 script {
                     // Reiniciar el contenedor por nombre
-                    sh 'docker restart django-container'
+                    sh 'docker restart django'
                 }
             }
         }
